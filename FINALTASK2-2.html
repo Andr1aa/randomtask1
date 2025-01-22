@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List with Checkboxes</title>
+</head>
+<body>
+  <div id="todoListContainer"></div>
+  <input type="text" id="todoInput" placeholder="Enter a todo item">
+  <button id="addButton">Add</button>
+
+  <script>
+    // Function to add a new todo item with a checkbox
+    function addTodoItem(item) {
+      const container = document.getElementById('todoListContainer');
+      let ul = document.querySelector('ul');
+      const liCount = document.querySelectorAll('li').length;
+
+      // Create the UL if it doesn't already exist
+      if (!ul) {
+        ul = document.createElement('ul');
+        container.appendChild(ul);
+      }
+
+      // Create a new LI element
+      const li = document.createElement('li');
+
+      // Create a checkbox
+      const checkbox = document.createElement('input');
+      checkbox.type = 'checkbox';
+
+      // Add the checkbox and text to the LI
+      li.appendChild(checkbox);
+      li.appendChild(document.createTextNode(` ${liCount + 1}. ${item}`));
+
+      // Append the LI to the UL
+      ul.appendChild(li);
+    }
+
+    // Event listener for the Add button
+    document.getElementById('addButton').addEventListener('click', () => {
+      const todoInput = document.getElementById('todoInput');
+      const item = todoInput.value.trim();
+      if (item) {
+        addTodoItem(item);
+        todoInput.value = ''; // Clear the input field
+      } else {
+        alert('Please enter a todo item.');
+      }
+    });
+
+    // Adding initial todo items programmatically
+    addTodoItem('Start Midterm Exam');
+    addTodoItem('Finish Midterm Exam');
+    addTodoItem('Submit Midterm Exam');
+    addTodoItem('Relax');
+  </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  header, footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #333;
+    color: white;
+    padding: 10px;
+  }
+  
+  .hero {
+    background: lightgray;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .cards, .nested-items {
+    display: grid;
+    gap: 10px;
+    margin: 20px;
+  }
+  
+  .cards .card, .nested-items .nested-item {
+    background: lightblue;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .table {
+    margin: 20px;
+    overflow-x: auto;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  footer {
+    flex-wrap: wrap;
+  }
+  
+  footer .footer-text, footer .release-date, footer .chat {
+    margin: 5px;
+  }
+  
+  /* Mobile-first styles (default) */
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .nested-items {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Tablet view (600px to 1024px) */
+  @media (min-width: 600px) {
+    .cards {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    .nested-items {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    footer {
+      justify-content: space-between;
+    }
+  }
+  
+  /* Desktop view (1024px and above) */
+  @media (min-width: 1024px) {
+    .cards {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  
+    .nested-items {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  
+    header, footer {
+      padding: 20px;
+    }
+  
+    .hero {
+      padding: 40px;
+    }
+  }

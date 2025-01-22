@@ -1,0 +1,200 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Desktop view (1024px and above) */
+@media (min-width: 1024px) {
+    header, footer {
+        display: fixed;
+        justify-content: space-between;
+        align-items: center;
+        background: #333;
+        color: white;
+        padding: 20px;
+    }
+
+    .hero {
+        background: lightgray;
+        text-align: center;
+        padding: 40px;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        margin: 20px;
+    }
+
+    .nested-items {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        margin: 20px;
+    }
+
+    .cards .card, .nested-items .nested-item {
+        background: lightblue;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .table {
+        margin: 20px;
+        overflow-x: auto;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: center;
+    }
+
+    footer {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    footer .footer-text, footer .release-date, footer .chat {
+        margin: 5px;
+    }
+}
+
+/* Tablet view (600px to 1024px) */
+@media (min-width: 600px) and (max-width: 1023px) {
+    header, footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #333;
+        color: white;
+        padding: 20px;
+    }
+
+    .hero {
+        background: lightgray;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin: 20px;
+    }
+
+    .nested-items {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin: 20px;
+    }
+
+    .cards .card, .nested-items .nested-item {
+        background: lightblue;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .table {
+        margin: 20px;
+        overflow-x: auto;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: center;
+    }
+
+    footer {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    footer .footer-text, footer .release-date, footer .chat {
+        margin: 5px;
+    }
+}
+
+/* Mobile-first styles (default) */
+.cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin: 20px;
+}
+
+.nested-items {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin: 20px;
+}
+
+header, footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #333;
+    color: white;
+    padding: 10px;
+}
+
+.hero {
+    background: lightgray;
+    text-align: center;
+    padding: 20px;
+}
+
+.cards .card, .nested-items .nested-item {
+    background: lightblue;
+    padding: 10px;
+    text-align: center;
+}
+
+.table {
+    margin: 20px;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+footer .footer-text, footer .release-date, footer .chat {
+    margin: 5px;
+}
